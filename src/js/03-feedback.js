@@ -12,7 +12,7 @@ const savedForm = throttle(() => {
     message: messageI.value,
   };
   localStorage.setItem(STORED_KEY, JSON.stringify(objectForm));
-}, 5000);
+}, 200);
 
 const loadFormState = () => {
   const savedState = localStorage.getItem(STORED_KEY);
@@ -25,11 +25,11 @@ const loadFormState = () => {
 
 const handleSubmit = event => {
   event.preventDefault();
-  const formData = {
+  const objectForm = {
     email: emailI.value,
     message: messageI.value,
   };
-  console.log(formData);
+  console.log(objectForm);
   localStorage.removeItem(STORED_KEY);
   submitForm.reset();
 };
