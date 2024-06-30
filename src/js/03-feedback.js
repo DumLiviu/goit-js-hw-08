@@ -31,10 +31,10 @@ const handleSubmit = event => {
   };
   console.log(formData);
   localStorage.removeItem(STORED_KEY);
-  form.reset();
+  submitForm.reset();
 };
 
-form.addEventListener('input', savedForm);
-form.addEventListener('submit', handleSubmit);
+submitForm.addEventListener('input', savedForm);
+submitForm.addEventListener('submit', handleSubmit);
 
 document.addEventListener('DOMContentLoaded', loadFormState);
